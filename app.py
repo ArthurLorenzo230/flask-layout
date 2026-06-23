@@ -4,8 +4,9 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template('index.html')
+    return render_template('index.html', title="Home")
 
 @app.route("/boletim")
 def boletim():
-    return render_template('boletim.html')
+    return render_template('boletim.html', title="Boletim")
+
