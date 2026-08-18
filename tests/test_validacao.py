@@ -21,3 +21,13 @@ def test_validacao_page_returns_right_rules():
     assert response.status_code == 200
     assert b'Pode votar: Sim' in response.data
     assert b'Pode dirigir: Sim' in response.data
+
+
+def test_layout_links_css_and_uses_site_header():
+    client = app.test_client()
+    response = client.get('/')
+
+    assert response.status_code == 200
+    assert b'/static/menu.css' in response.data
+    assert b'class="site-header"' in response.data
+    assert b'class="menu"' in response.data

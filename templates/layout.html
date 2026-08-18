@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>{{ title or 'Home' }}</title>
     <link rel="stylesheet" href="/static/menu.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/boletim">Boletim</a></li>
-                <li><a href="/sobre-mim">Sobre mim</a></li>
-                <li><a href="/validacao">Validação de idade</a></li>
-            </ul>
-        </nav>
+    <header class="site-header">
+        <div class="container nav-wrapper">
+            <a class="brand" href="/">Arthur</a>
+            <nav class="menu" aria-label="Menu principal">
+                <a href="/">Home</a>
+                <a href="/boletim">Boletim</a>
+                <a href="/sobre-mim">Sobre mim</a>
+                <a href="/validacao">Validação de idade</a>
+            </nav>
+        </div>
     </header>
-    <main>
+
+    <main class="main-content">
         {% block main %}
         {% endblock %}
     </main>
